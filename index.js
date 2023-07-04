@@ -23,6 +23,17 @@ function updateTime() {
   parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]"
   );
 }
+
+  // Seoul
+  let seoulElement = document.querySelector("#seoul");
+  if (seoulElement) {
+  let seoulDateElement = seoulElement.querySelector(".date");
+  let seoulTimeElement = seoulElement.querySelector(".time");
+  let seoulTime = moment().tz("Asia/Seoul");
+
+  seoulDateElement.innerHTML = seoulTime.format("MMMM Do YYYY");
+  seoulTimeElement.innerHTML = seoulTime.format("h:mm:ss [<small>]A[</small>]");
+}
 }
 
 function updateCity(event) {
@@ -43,6 +54,7 @@ cityTimeZone = moment.tz.guess();
           "A"
           )}</small></div>
       </div>
+      <a href="index.html">All cities</a>
   `;
 }
 
